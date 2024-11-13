@@ -20,8 +20,8 @@ html {
 body {
   background: radial-gradient(
     circle at top,
-    rgba(36, 171, 97, 0.98),
-    rgba(103, 250, 240, 0.821)
+    rgba(197, 197, 197, 0.98),
+    rgba(157, 156, 156, 0.821)
   );
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
@@ -51,7 +51,7 @@ h1 {
   margin: 3rem auto;
   padding: 2rem;
   border-radius: 6px;
-  background: linear-gradient(#383624, #282617);
+  background: linear-gradient(#114d85, #282617);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   position: relative;
 }
@@ -74,20 +74,20 @@ h1 {
 }
 
 #players.highlight-player li.active {
-  border-color: #f6e35a;
+  border-color: #10a3f1;
   animation: pulse 2s infinite ease-in-out;
 }
 
 #players.highlight-player li.active .player-name,
 #players.highlight-player li.active .player-symbol {
-  color: #ec7ecd;
+  color: #ffffff;
 }
 
 #players button {
   width: 3rem;
   border: none;
-  background: none;
-  color: #96dc97;
+  background: #fbfbf9;
+  color: #011b85;
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -96,7 +96,7 @@ h1 {
 }
 
 #players button:hover {
-  color: #96dc97;
+  color: #d41818;
 }
 
 .player {
@@ -126,7 +126,7 @@ h1 {
   border: none;
   padding: 0.5rem;
   animation: pulse-text 2s infinite;
-  background-color: #46432f;
+  background-color: #6e6e6e;
   text-align: center;
   text-transform: uppercase;
 }
@@ -199,7 +199,7 @@ ol {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(40, 38, 23, 0.95);
+  background-color: rgba(197, 19, 102, 0.95);
   animation: pop-in 0.5s cubic-bezier(0.68, -0.55, 0.65, 0.52) forwards;
 }
 
@@ -207,14 +207,14 @@ ol {
   font-family: "Caprasimo", cursive;
   font-size: 4rem;
   text-align: center;
-  color: #fcd256;
+  color: #56fcf4;
   margin: 0;
 }
 
 #game-over p {
   font-size: 2rem;
   text-align: center;
-  color: #e1dec7;
+  color: #56fcf4;
 }
 
 #game-over button {
@@ -222,8 +222,8 @@ ol {
   margin: 0 auto;
   font-size: 1.5rem;
   background: none;
-  border: 2px solid #fcd256;
-  color: #fcd256;
+  border: 2px solid #56fcf4;
+  color: #56fcf4;
   padding: 0.5rem 1rem;
   border-radius: 4px;
   cursor: pointer;
@@ -232,7 +232,7 @@ ol {
 }
 
 #game-over button:hover {
-  background: #fcd256;
+  background: #56fcf4;
   color: #3f3b00;
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
