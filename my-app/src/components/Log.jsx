@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Log({ turns }) {
     return (
-        <ol>
+        <ol id='log'>
             {turns.map(turn =>
                 <li key={`${turn.square.row}${turn.square.col}`} >
                     {turn.player} SELECTED {turn.square.row},{turn.square.col}
