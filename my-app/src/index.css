@@ -20,8 +20,8 @@ html {
 body {
   background: radial-gradient(
     circle at top,
-    rgba(241, 210, 70, 0.98),
-    rgba(250, 176, 103, 0.87)
+    rgba(36, 171, 97, 0.98),
+    rgba(103, 250, 240, 0.821)
   );
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
@@ -80,14 +80,14 @@ h1 {
 
 #players.highlight-player li.active .player-name,
 #players.highlight-player li.active .player-symbol {
-  color: #f6e35a;
+  color: #ec7ecd;
 }
 
 #players button {
   width: 3rem;
   border: none;
   background: none;
-  color: #c3ba78;
+  color: #96dc97;
   font-size: 0.9rem;
   cursor: pointer;
   transition: color 0.2s;
@@ -96,7 +96,7 @@ h1 {
 }
 
 #players button:hover {
-  color: #f8ca31;
+  color: #96dc97;
 }
 
 .player {
@@ -150,7 +150,7 @@ ol {
 #pre-game button {
   cursor: pointer;
   background: none;
-  color: #f8c031;
+  color: #96dc97;
   border: none;
   font-family: "Caprasimo", cursive;
   font-size: 4rem;
