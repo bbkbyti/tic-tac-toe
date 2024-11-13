@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import './App.css';
 
 import Player from './components/Player';
 import GameBoard from './components/GameBoard';
+import Log from './components/Log.jsx';
+import GameOver from './components/GameOver.jsx';
 
 import { WINNING_COMBINATIONS } from './components/winning-combinations.js';
 
@@ -32,7 +33,11 @@ function App() {
 
 
   const activePlayer = derivedActivePlayer(gameTurns);
-  let gameBoard = initialGameBoard;
+
+
+  // adding a brand new array instead of using initial array in memory!
+  // making a deep copy for restart button logic to work
+  let gameBoard = [...initialGameBoard.map(array => [...array])];
 
   for (const turn of gameTurns) {
     const { square, player } = turn;
@@ -82,23 +87,23 @@ function App() {
   }
   return (
     <main>
-      <div className="App">
-        <ol>
+      <div id='game-container'>
+        <ol id='players' className='highlight-player'>
           <Player initialName='Player 1'
             symbol='X'
             onChangeName={handlePlayerNameChange}
-            isActive={activePlayer} />
+            isActive={activePlayer === 'X'} />
           <Player initialName='Player 2'
             symbol='O'
             onChangeName={handlePlayerNameChange}
-            isActive={activePlayer} />
+            isActive={activePlayer === 'O'} />
         </ol>
         {(winner || hasDraw) && <GameOver winner={winner} onRestart={handleRestart} />}
         <GameBoard onSelectSquare={handleSelectSquare} activePlayerSymbol={activePlayer}
           board={gameBoard}
         />
       </div>
-      <Log />
+      <Log turns={gameTurns} />
     </main>
   );
 }
