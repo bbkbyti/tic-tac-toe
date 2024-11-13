@@ -56,17 +56,22 @@ function App() {
     }
   }
 
+  const hasDraw = gameTurns.length === 9 && !winner;
+
   const handleSelectSquare = (rowIndex, colIndex) => {
     setGameTurns(prevTurns => {
       const currentPlayer = derivedActivePlayer(prevTurns);
       const updatedTurns = [
-        { square: { row: rowIndex, col: ColIndex }, player: currentPlayer },
+        { square: { row: rowIndex, col: colIndex }, player: currentPlayer },
         ...prevTurns
       ]
       return updatedTurns;
     })
   }
 
+  const handleRestart = () => {
+    setGameTurns([]);
+  }
   const handlePlayerNameChange = (symbol, newName) => {
     setPlayer(prevPlayer => {
       return {
@@ -87,11 +92,13 @@ function App() {
             symbol='O'
             onChangeName={handlePlayerNameChange}
             isActive={activePlayer} />
-          <GameBoard onSelectSquare={handleSelectSquare} activePlayerSymbol={activePlayer}
-            board={gameBoard}
-          />
         </ol>
+        {(winner || hasDraw) && <GameOver winner={winner} onRestart={handleRestart} />}
+        <GameBoard onSelectSquare={handleSelectSquare} activePlayerSymbol={activePlayer}
+          board={gameBoard}
+        />
       </div>
+      <Log />
     </main>
   );
 }
